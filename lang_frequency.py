@@ -1,8 +1,13 @@
 import argparse
+import os.path
+import sys
 
 
-def load_data(filepath):
-    pass
+def load_text_data(filepath):
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath, 'r') as file:
+        return file.read()
 
 
 def get_most_frequent_words(text):
@@ -27,6 +32,14 @@ def main():
     command_line_arguments = parse_command_line_arguments()
 
     filename = command_line_arguments.filename
+
+    try:
+        text_data = load_text_data(filename)
+    except UnicodeDecodeError:
+        sys.exit('text file has invalid format')
+
+    if not text_data:
+        sys.exit('file not found')
 
 
 if __name__ == '__main__':
