@@ -17,6 +17,18 @@ def get_ten_most_frequent_words(text):
     return Counter(words).most_common(10)
 
 
+def print_most_frequent_words(words_counter):
+    print()
+    print('{:^34}'.format('Most frequent words in text'))
+    print('{:-<34}'.format(''))
+    print('| {:^20} | {:^7} |'.format('Word', 'Count'))
+    print('{:-<34}'.format(''))
+
+    for word, count in words_counter:
+        print('| {:20} | {:^7} |'.format(word, count))
+        print('{:-<34}'.format(''))
+
+
 def parse_command_line_arguments():
     parser = argparse.ArgumentParser()
 
@@ -43,6 +55,10 @@ def main():
 
     if not text_data:
         sys.exit('file not found')
+
+    print_most_frequent_words(
+        words_counter=get_ten_most_frequent_words(text_data),
+    )
 
 
 if __name__ == '__main__':
