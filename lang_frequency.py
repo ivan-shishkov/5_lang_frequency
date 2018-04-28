@@ -1,6 +1,8 @@
 import argparse
 import os.path
 import sys
+import re
+from collections import Counter
 
 
 def load_text_data(filepath):
@@ -10,8 +12,9 @@ def load_text_data(filepath):
         return file.read()
 
 
-def get_most_frequent_words(text):
-    pass
+def get_ten_most_frequent_words(text):
+    words = re.findall(r'[\w\']+', text.lower())
+    return Counter(words).most_common(10)
 
 
 def parse_command_line_arguments():
