@@ -34,7 +34,7 @@ def parse_command_line_arguments():
 
     parser.add_argument(
         'filename',
-        help='a text file for analysis, which should be in UTF-8 encoding',
+        help='an analyzed text file in UTF-8 encoding',
         type=str,
     )
 
