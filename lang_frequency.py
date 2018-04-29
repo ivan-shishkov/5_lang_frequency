@@ -53,8 +53,11 @@ def main():
     except UnicodeDecodeError:
         sys.exit('text file has invalid format')
 
-    if not text_data:
+    if text_data is None:
         sys.exit('file not found')
+
+    if not text_data:
+        sys.exit('file is empty')
 
     print_most_frequent_words(
         words_counter=get_ten_most_frequent_words(text_data),
