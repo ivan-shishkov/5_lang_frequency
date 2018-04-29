@@ -19,14 +19,14 @@ def get_ten_most_frequent_words(text):
 
 def print_most_frequent_words(words_counter):
     print()
-    print('{:^34}'.format('Most frequent words in text'))
-    print('{:-<34}'.format(''))
-    print('| {:^20} | {:^7} |'.format('Word', 'Count'))
-    print('{:-<34}'.format(''))
+    print('{:^40}'.format('Most frequent words in text'))
+    print('{:-<40}'.format(''))
+    print('| {:^24} | {:^9} |'.format('Word', 'Count'))
+    print('{:-<40}'.format(''))
 
     for word, count in words_counter:
-        print('| {:20} | {:^7} |'.format(word, count))
-        print('{:-<34}'.format(''))
+        print('| {:24} | {:^9} |'.format(word, count))
+        print('{:-<40}'.format(''))
 
 
 def parse_command_line_arguments():
