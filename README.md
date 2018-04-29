@@ -8,7 +8,7 @@ For script launch need to install Python 3.5.
 
 Usage:
 
-```bash
+```
 
 $ python3 lang_frequency.py -h
 usage: lang_frequency.py [-h] filename
@@ -23,7 +23,7 @@ optional arguments:
 
 Example of script launch on Linux:
 
-```bash
+```
 
 $ python3 lang_frequency.py pep-0008.txt
 
