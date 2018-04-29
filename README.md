@@ -1,6 +1,7 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+This script is intended for print of ten most frequent words in text file.
+
 
 # Project Goals
 
