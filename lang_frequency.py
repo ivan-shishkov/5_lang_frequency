@@ -12,9 +12,9 @@ def load_text_data(filepath):
         return file.read()
 
 
-def get_ten_most_frequent_words(text):
+def get_most_frequent_words(text, count_words):
     words = re.findall(r'[\w\']+', text.lower())
-    return Counter(words).most_common(10)
+    return Counter(words).most_common(count_words)
 
 
 def print_most_frequent_words(words_counter):
@@ -60,7 +60,7 @@ def main():
         sys.exit('file is empty')
 
     print_most_frequent_words(
-        words_counter=get_ten_most_frequent_words(text),
+        words_counter=get_most_frequent_words(text=text, count_words=10),
     )
 
 
